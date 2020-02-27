@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>SmartFix-data</title>
+   <script src="https://kit.fontawesome.com/08972183a7.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="fixed-sn light-blue-skin">
+<!--Main Navigation-->
+    <header>
+ <div class="d-flex flex-column">
+        <div class="p-2">
+        <!--Navbar-->
+       <nav class="navbar navbar-expand-lg navbar-light bg-light navbar fixed-top">
+      
+              <a  href="index.html"  class="text-primary">SmarfFix</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+ 
+                        <ul class="nav navbar-nav nav-flex-icons ml-auto  align-middle">
+                           
+                            <li class="nav-item">
+                                <a class="nav-link text-primary" >
+                                    <i class="fas fa-home"></i>
+                                    <span class="clearfix d-none d-sm-inline-block">Главная</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    <i class="fa fa-gear"></i>
+                                    <span class="clearfix d-none d-sm-inline-block">Настройки</span>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-user"></i>
+                                    <span class="clearfix d-none d-sm-inline-block">Вошли как Гость</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Отчеты</a>
+                                    <a class="dropdown-item" href="#">Статистика</a>
+                                  </div>
+                            </li>
+                              <li><form class="form-inline mt-2 ml-2">
+                                <input class="form-control my-0 py-0" type="text" placeholder="поиск" style="max-width: 150px;">
+                                <button class="btn btn-sm btn-info ml-2 px-2">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </form>
+                            </li>
+                        </ul>
+                </div>
+          </nav>
+           </div>
+                  <div class="mt-5">
+                  <div id="slide-out" class="side-nav fixed sn-bg-4">
+                        <ul class="custom-scrollbar">
+                        </ul>
+                        <div class="sidenav-bg rgba-blue-strong"></div>
+                    </div>
+                </div>
+
+        <!--/.Navbar-->
+
+      </div>  
+    
+
+
+    </header>
+    <main>
+        <div class="container-fluid">
+            <section class="mb-5">
+             <div class="card p-2 mb-5">
+                <div class="row">
+                <div class="col-lg-5 col-md-12">
+                        <div class="diapazondat">
+                                 <form    id="diapazondata" name="diapazondata" method="POST" action=""  enctype="multipart/form-data">
+                                      <label> c:<input type="date" name="dates"  onfocus="this.select();lcs(this)" onclick="event.cancelBubble=true;this.select();lcs(this)" value="<? $dates = $_POST['dates']; ?>"> </label>
+                                      <? echo "".$datas; ?>
+                                      <label>по:<input type="date" name="datepo"  onfocus="this.select();lcs(this)" onclick="event.cancelBubble=true;this.select();lcs(this)" value="<? $datepo = $_POST['datepo'];?>"></label>
+                                      <? echo "".$datepo; ?>
+                                      <input type="submit" name="submit" id="submit" value="показать" class="btn btn-sm btn-info ml-2 px-2">
+                                 </form>
+                        </div>
+             </div>            
+                             <div class="col-lg-3 col-md-12">
+                                <select class="mdb-select colorful-select dropdown-primary mx-2">
+                                <option value="" disabled selected>Сортировка по типу устройств</option>
+                                <option value="1">СБ</option>
+                                <option value="2">Ноутбуки</option>
+                                <option value="3">Планшеты</option>
+                                <option value="4">Мониторы</option>
+                                <option value="5">Телефоны</option>
+                                <option value="6">Телевизоры</option>
+                                <option value="7">Другоеы</option>
+                            </select>
+                        </div>
+                      <div class="col-lg-3 col-md-6">
+                          <select class="mdb-select colorful-select dropdown-primary mx-2">
+                                <option value="" disabled selected>Отобразить по статусу</option>
+                                <option value="1">В очереди</option>
+                                <option value="2">Готов</option>
+                                <option value="3">Согласовать</option>
+                                <option value="4">В работе</option>
+                                <option value="5">Делаем</option>
+                                <option value="6">Ждем ответ</option>
+                                <option value="7">Не ремонт</option>                                
+                            </select>
+                           </div>
+                     </div>
+ </div>                
+                   <div class="card card-cascade narrower">
+                    <div class="view view-cascade py-3 gradient-card-header info-color-dark mx-4 d-flex justify-content-between align-items-center">
+
+                        <div>
+                            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"  title="Принять">
+                                <i class="fas fa-pencil-alt mt-0"></i>    
+                            </button>
+                            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" title="Гарантия">
+                                <i class="fa fa-columns mt-0"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2"  title="Показать &#34Отдано&#34">
+																   <i class="fa fa-th-large mt-0"></i>                     </button>
+                        </div>
+<div class="text-center">
+                        <a href="" class="white-text mx-3 ">Список всех устройств</a>
+</div>
+                   <div></div>
+                    </div>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>№</th>
+                                        <th>Принято</th>
+                                        <th>Сделать до</th>
+                                        <th>Устройство</th>
+                                        <th>Производ</th>
+                                        <th>Модель</th>
+                                        <th>Телефон</th>
+                                        <th>Неисправность</th>
+                                        <th>Результат теста</th>
+                                        <th>Положение</th>
+                                        <th>Запч</th>
+                                        <th>Раб</th>
+                                        <th>Цена</th>
+                                        <th>Статус</th>
+                                        <th>Выдано</th>
+                                        <th>Принял</th>
+                                        <th>Расчет</th>
+                                        <th>Мастер</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>2020-02-19</td>
+                                        <td>0000-00-00</td>
+                                        <td>Планшет	</td>
+                                        <td>Nomi</td>
+                                        <td>0700d</td>
+                                        <td>+380672866158</td>
+                                        <td>батарея вздулась кнопка</td>
+                                         <td></td>
+                                         <td>SmartFix</td>
+                                        <td>0</td>
+                                        <td>350</td>
+                                        <td>350</td>
+                                        <td>Готов</td>
+                                        <td>0000-00-00</td>
+                                        <td>Алексей</td>
+                                         <td>нет</td>
+                                        <td>Павел</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>2020-02-19</td>
+                                        <td>0000-00-00</td>
+                                        <td>Планшет	</td>
+                                        <td>Nomi</td>
+                                        <td>0700d</td>
+                                        <td>+380672866158</td>
+                                        <td>батарея вздулась кнопка</td>
+                                         <td></td>
+                                         <td>SmartFix</td>
+                                        <td>0</td>
+                                        <td>350</td>
+                                        <td>350</td>
+                                        <td>Готов</td>
+                                        <td>0000-00-00</td>
+                                        <td>Алексей</td>
+                                         <td>нет</td>
+                                        <td>Павел</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>2020-02-19</td>
+                                        <td>0000-00-00</td>
+                                        <td>Планшет	</td>
+                                        <td>Nomi</td>
+                                        <td>0700d</td>
+                                        <td>+380672866158</td>
+                                        <td>батарея вздулась кнопка</td>
+                                         <td></td>
+                                         <td>SmartFix</td>
+                                        <td>0</td>
+                                        <td>350</td>
+                                        <td>350</td>
+                                        <td>Готов</td>
+                                        <td>0000-00-00</td>
+                                        <td>Алексей</td>
+                                         <td>нет</td>
+                                        <td>Павел</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+            </div>
+            <hr class="my-0">
+            <div class="d-flex justify-content-between">
+             <div class="wrap">
+                <select class="mdb-select colorful-select dropdown-primary mt-2">
+                 <option value="1" selected>20 Строк</option>
+                  <option value="2">30 Строк</option>
+                  <option value="3">40 Строк</option>
+                  <option value="4">50 Строк</option>
+                </select>
+              </div>
+              <!--Pagination -->
+              <nav class="mt-4">
+                <ul class="pagination pagination-circle pg-blue mb-0">
+
+                  <!--First-->
+                  <li class="page-item disabled">
+                    <a class="page-link">Первая</a>
+                  </li>
+
+                  <!--Arrow left-->
+                  <li class="page-item disabled">
+                    <a class="page-link" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">предыдущая</span>
+                    </a>
+                  </li>
+
+                  <!--Numbers-->
+                  <li class="page-item active">
+                    <a class="page-link">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link">4</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link">5</a>
+                  </li>
+
+                  <!--Arrow right-->
+                  <li class="page-item">
+                    <a class="page-link" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">следующая</span>
+                    </a>
+                  </li>
+
+                  <!--First-->
+                  <li class="page-item">
+                    <a class="page-link">вперед</a>
+                  </li>
+
+                </ul>
+              </nav>
+              <!--/Pagination -->
+            </div>
+            </div>
+         </div>
+        </section>
+      </div>
+  </main>
+  <footer class="page-footer font-small">
+<div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="">SmartFix</a>
+    </div>
+
+  </footer>
+ 
+    <script> 	// SideNav Button Initialization
+    $(".button-collapse").sideNav();
+    // SideNav Scrollbar Initialization
+    var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+    var ps = new PerfectScrollbar(sideNavScrollbar);
+    // Material Select Initialization
+    $(document).ready(function () {
+      $('.mdb-select').material_select();
+    });
+    // Data Picker Initialization
+    $('.datepicker').pickadate();
+    // Tooltip Initialization
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+   
+   </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>
